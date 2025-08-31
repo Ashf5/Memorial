@@ -1,19 +1,19 @@
-
+// Todo update the .env
 import knex from "knex";
 
 import dotenv from 'dotenv';
 dotenv.config();
 
-const {USER, PASSWORD, DB_PORT, HOST} = process.env;
-let ConvertedPort = Number(DB_PORT) || 5432;
+const {PGUSER, PGPASSWORD, PGHOST, PGDATABASE} = process.env;
+let Port = 5432;
 
 export const db = knex({
     client: 'pg',
     connection: {
-        host: HOST,
-        user: USER,
-        password: PASSWORD,
-        database: 'Memorial',
-        port: ConvertedPort
+        host: PGHOST,
+        user: PGUSER,
+        password: PGPASSWORD,
+        database: PGDATABASE,
+        port: Port
     }
 });
