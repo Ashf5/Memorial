@@ -1,6 +1,7 @@
 
-import { getSoldierByIdDB, getSoldiersDB, getSoldiersPaginatedDB } from "../models/soldierModels";
+import { getSoldierByIdDB, getSoldiersDB, getSoldiersPaginatedDB, getSoldiersSearchDB } from "../models/soldierModels";
 import { Request, Response } from "express";
+import { Soldier } from "../types/soldierType";
 
 
 // Gets paginated soldiers, if no query params then defaults to first page with 20
@@ -8,11 +9,21 @@ export const getSoldiersPaginated = async (req:Request, res:Response) => {
     try {
         const page = parseInt(req.query.page as string) || 1;
         const limit = parseInt(req.query.limit as string) || 20;
-        const soldiers = await getSoldiersPaginatedDB(page, limit);
+        const query = req.query.query as string;
+        
+        let soldiers:Soldier[];
+        if (query) {
+            soldiers = await getSoldiersSearchDB(query, page, limit);
+        } else {
+            soldiers = await getSoldiersPaginatedDB(page, limit);
+        }
+         
         if (soldiers.length === 0) {
             return res.status(404).json(soldiers);
         }
+
         return res.status(200).json(soldiers)
+
     }catch (e) {
         return res.status(500).json({msg: "Something went wrong."});
     }
@@ -35,5 +46,20 @@ export const getSoldierById = async (req:Request, res: Response) => {
     }
     catch(e) {
         return res.status(500).json({msg: "Something went wrong."});
+    }
+}
+
+// function to get soldiers by search query
+export const getSoldiersSearch = async (req:Request, res:Response) => {
+    const {query, page, limit} = req.params;
+    const pageNumber = Number(page)
+    const pageLimit = Number(limit);
+
+    try {
+        const soldiers = await getSoldiersSearchDB(query, pageNumber, pageLimit);
+        return res.status(200).json(soldiers);
+    }
+    catch(e) {
+        return res.status(500).json({msg: 'An error occured while fetching soldiers'});
     }
 }

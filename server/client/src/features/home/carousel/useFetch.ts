@@ -8,15 +8,15 @@ import type {Soldier} from '../../../../../src/types/soldierType';
 const APIURLALL = 'https://memorial-zmw1.onrender.com/api/soldiers?limit=10&page='
 
 
-// custom hook to fetch soldiers
-export function useFetch() {
+// custom hook to fetch soldiers, if has query adds it to the url.
+export function useFetch(query:string | undefined) {
     const [soldiers, setSoldiers] = useState<Soldier[]>([]);
     const [page, setPage] = useState(1);
 
     // fetch the soldiers
     useEffect(() => {
-        fetch(`${APIURLALL}${page}`).then(data => data.json()).then(data => setSoldiers(data));
-    }, []);
+        fetch(`${APIURLALL}${page}${query ? '&query=' + query : ''}`).then(data => data.json()).then(data => setSoldiers(data));
+    }, [query,]);
 
     // function to update next page of soldiers and update page state
     function fetchNext() {
