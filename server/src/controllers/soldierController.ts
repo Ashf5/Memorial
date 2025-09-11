@@ -19,11 +19,12 @@ export const getSoldiersPaginated = async (req:Request, res:Response) => {
     
 }
 
+
 export const getSoldierById = async (req:Request, res: Response) => {
     
     let id = Number(req.params.id);
     if (!id) {
-        return res.status(403).json({msg: "Invalid id provided"});
+        return res.status(400).json({msg: "Invalid id provided"});
     }
     try {
         let soldier = await getSoldierByIdDB(id);
