@@ -41,3 +41,19 @@ export const getSoldiersPaginatedDB = async(pageNumber:number = 1, perPage:numbe
     }
     
 }
+
+
+// Returns a list of soldiers matching the search query
+export const getSoldiersSearchDB = async(query:string, pageNumber:number = 1, perPage:number = 20): Promise<Soldier[]> => {
+    let offset = (pageNumber - 1) * perPage;
+
+    try {
+        const soldiers: Soldier[] = await db('soldiers').select().whereILike('name', `%${query}%`).offset(offset).limit(perPage);
+        return soldiers;
+    }
+    catch(e) {
+        console.log(e);
+        throw e;
+    }
+
+}

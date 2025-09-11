@@ -4,7 +4,7 @@ import { Router } from "express";
 
 export const router = Router();
 
-// Gets soldiers, paginated with page and limit. Defaults to 20 per page.
+// Gets soldiers, paginated with page and limit. Defaults to 20 per page. Also takes a query parameter
 router.get('/soldiers', getSoldiersPaginated);
 
 // Gets soldier by id.

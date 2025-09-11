@@ -24,11 +24,13 @@ import { useRef } from "react";
         }
     };
 
-// Element for displaying the soldiers in a carousel
-function CarouselElement() {
+type CarouselProps = {query:string|undefined}
+
+// Element for displaying the soldiers in a carousel. Takes a query props, can be undefined.
+function CarouselElement({query}:CarouselProps) {
     
     const carouselRef = useRef<Carousel | null>(null);
-    const {soldiers, fetchNext, fetchPrevious} = useFetch();
+    const {soldiers, fetchNext, fetchPrevious} = useFetch(query);
 
     // create the slides and the previous and next buttons
     const slides = [
