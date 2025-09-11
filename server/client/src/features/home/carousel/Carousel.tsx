@@ -3,39 +3,53 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useFetch } from "./useFetch";
 import type {Soldier} from '../../../../../src/types/soldierType';
+import { useRef } from "react";
 
     
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
             items: 3,
-            slidesToSlide: 3 // optional, default to 1.
+            slidesToSlide: 1 
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
             items: 2,
-            slidesToSlide: 2 // optional, default to 1.
+            slidesToSlide: 1 
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
             items: 1,
-            slidesToSlide: 1 // optional, default to 1.
+            slidesToSlide: 1
         }
     };
 
 // Element for displaying the soldiers in a carousel
 function CarouselElement() {
     
-    const {soldiers} = useFetch()
+    const carouselRef = useRef<Carousel | null>(null);
+    const {soldiers, fetchNext, fetchPrevious} = useFetch();
+
+    // create the slides and the previous and next buttons
+    const slides = [
+        <div key='previous-button'><button onClick={fetchPrevious}>Previous</button></div>,
+            ...soldiers.map(soldier => <CarouselCard soldier={soldier} key={soldier.id} />), 
+            <div key='next-button'><button onClick={() => {fetchNext(); carouselRef.current?.goToSlide(0, true)}}>Next</button></div>
+    ]
+            
     
-   
 
     return (
-        <>
-            <Carousel responsive={responsive}>
-                {soldiers.map(soldier => <CarouselCard soldier={soldier} key={soldier.id}/>)}
+        <div>
+            <Carousel 
+            responsive={responsive}
+            centerMode={true}
+            ref={carouselRef}>
+
+                {slides}
+                
             </Carousel>
-        </>
+        </div>
     )
 }
 
