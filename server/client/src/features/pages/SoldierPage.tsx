@@ -20,7 +20,7 @@ const SoldierPage = () => {
                 <div>
                     <SoldierCard soldier={soldier}/>
                     <br />
-                    <DeedForm />
+                    <DeedForm soldier={soldier}/>
                 </div>
             
             
