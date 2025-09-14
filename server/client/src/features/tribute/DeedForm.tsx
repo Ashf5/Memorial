@@ -48,9 +48,9 @@ const DeedForm: React.FC<formProps> = ({soldier}) => {
     }
 
     return (
-        <>
+        <div>
             
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="deedForm">
                 <h3>Good Deeds</h3>
                 <label><input type="radio" name="deed" value='smile' />Give a stranger a genuine smile</label> <br/>
                 <label><input type="radio" name="deed" value='help-friend' />Help a friend / stranger</label> <br/>
@@ -59,10 +59,13 @@ const DeedForm: React.FC<formProps> = ({soldier}) => {
                 <label><input type="radio" name="deed" value='tefillin' />Lay Tefillin</label> <br/>
                 <label><input type="radio" name="deed" value='torah' />Learn Some Torah</label> <br/>
                 <label>Other: <input type="text" name="other" /></label><br /><br />
-                <label><input type="email" name="email" />Your Email (optional)</label>
-                <input type="submit" />
+                <label>Email (optional) <input type="email" name="email" /></label>
+                <div id="buttonContainer">
+                    <input type="submit" />
+                </div>
+                
             </form>
-        </>
+        </div>
         
     )
 }

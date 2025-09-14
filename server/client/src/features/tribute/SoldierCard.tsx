@@ -7,8 +7,8 @@ type soldierProps = {
 const SoldierCard:React.FC<soldierProps> = ({soldier}) => {
 
     return (
-        <div>
-            <img src={soldier.image} alt="Picture of soldier" />
+        <div className="soldierCard">
+            <img className="soldierImage" src={soldier.image} alt="Picture of soldier" />
             <h3>{soldier.name}, {soldier.age}</h3>
             <p>Fell on: {soldier.dateFell}</p>
             
