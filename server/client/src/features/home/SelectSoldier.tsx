@@ -19,7 +19,7 @@ export const SelectSoldier: React.FC = () => {
 
     return (
         <div className="selectArea">
-            <input type="text" name="search" placeholder="Search Soldiers" onChange={(e) => setQuery(e.target.value)}/>
+            <input id="searchBox" type="text" name="search" placeholder="  Search Soldiers" onChange={(e) => setQuery(e.target.value)}/>
             <br />
             <br />
             <CarouselElement query={debounced}/>

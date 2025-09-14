@@ -5,11 +5,11 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
-    padding: 20px;
+    padding: 20px 0px 20px 0px;
 }
 
 .info__card {
-    width: 75vw;
+    width: 85vw;
     position: relative;
     
     
@@ -29,12 +29,48 @@
     color: white;
     text-align: center;
     padding: 1rem;
+    font-size: x-small;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
-.info__text {
-    /* color: white; */
-}
 
 .selectArea {
     width: 75vw;
+}
+
+#searchBox {
+    background-color: #e6e9f4;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    aspect-ratio: 45 / 1;
+    margin: 30px 0px 0px 0px;
+}
+
+.soldierCard {
+    margin: 5px;
+}
+
+.soldierImage {
+    width: 95%;
+    border-radius: 5px;
+}
+
+@media (min-width: 600px) {
+    .info__card {
+        width: 75vw;
+    }
+    .info__overlay {
+        font-size: medium;
+        font-weight: bolder;
+        top: 40%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .info__overlay {
+        top: 33%;
+        font-size: x-large;
+        font-weight: bolder;
+    }
 }
