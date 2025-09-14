@@ -1,11 +1,14 @@
-
+body {
+    background-color: #f8f9fc;
+}
 .mainContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     padding: 20px 0px 20px 0px;
+    
 }
 
 .info__card {
@@ -19,6 +22,7 @@
     height: auto;
     width: 100%;
     display:block;
+    border-radius: 7px;
 }
 
 .info__overlay {
@@ -38,22 +42,29 @@
     width: 75vw;
 }
 
+
+
 #searchBox {
     background-color: #e6e9f4;
     border: none;
     border-radius: 5px;
     width: 100%;
-    aspect-ratio: 45 / 1;
+    aspect-ratio: 7 / 1;
     margin: 30px 0px 0px 0px;
 }
 
 .soldierCard {
-    margin: 5px;
+    margin: 8px;
+    color: #0d0f1c;
 }
 
 .soldierImage {
     width: 95%;
     border-radius: 5px;
+}
+
+.soldierName {
+    font-size: large;
 }
 
 @media (min-width: 600px) {
@@ -64,6 +75,10 @@
         font-size: medium;
         font-weight: bolder;
         top: 40%;
+    }
+
+    #searchBox {
+        aspect-ratio: 45 / 1;
     }
 }
 
