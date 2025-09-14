@@ -62,6 +62,7 @@ interface CarouselCardProps {
     soldier: Soldier;
 }
 
+// Cards for 
 function CarouselCard({ soldier }: CarouselCardProps) {
 
     return (
