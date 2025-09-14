@@ -10,12 +10,12 @@ import { Link } from "react-router-dom";
 const responsive = {
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 3,
-        slidesToSlide: 1
+        items: 7,
+        slidesToSlide: 2
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
-        items: 2,
+        items: 3,
         slidesToSlide: 1
     },
     mobile: {
@@ -66,8 +66,8 @@ function CarouselCard({ soldier }: CarouselCardProps) {
 
     return (
         <Link to={`/${soldier.id}`}>
-            <div>
-                <img src={soldier.image} alt="Picture of soldier" />
+            <div className="soldierCard">
+                <img className="soldierImage" src={soldier.image} alt="Picture of soldier" />
                 <h3>{soldier.name}</h3>
                 <p>Date Fell: {soldier.dateFell}</p>
             </div>
