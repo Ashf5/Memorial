@@ -66,8 +66,8 @@ function CarouselCard({ soldier }: CarouselCardProps) {
 
     return (
         <Link to={`/${soldier.id}`}>
-            <div className="soldierCard">
-                <img className="soldierImage" src={soldier.image} alt="Picture of soldier" />
+            <div className="soldierCarouselCard">
+                <img className="soldierCarouselImage" src={soldier.image} alt="Picture of soldier" />
                 <p className="soldierName">{soldier.name}</p>
                 <p>Date Fell: {soldier.dateFell}</p>
             </div>
