@@ -1,0 +1,40 @@
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+}
+
+.info__card {
+    width: 75vw;
+    position: relative;
+    
+    
+}
+
+#background-image {
+    height: auto;
+    width: 100%;
+    display:block;
+}
+
+.info__overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* center */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.info__text {
+    /* color: white; */
+}
+
+.selectArea {
+    width: 75vw;
+}
