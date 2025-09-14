@@ -1,8 +1,14 @@
+import Info from "../home/Info";
 import { SelectSoldier } from "../home/SelectSoldier";
+import './homepage.css';
 
 const HomePage = () => {
     return (
-        <SelectSoldier />
+        <div className="mainContainer">
+            <Info />
+            <SelectSoldier />
+        </div>
+        
     )
 }
 
