@@ -1,5 +1,5 @@
 
-import { addDeed } from "../controllers/deedController";
+import { addDeed, getTotalDeeds } from "../controllers/deedController";
 import { getSoldierById, getSoldiersPaginated } from "../controllers/soldierController";
 import { Router } from "express";
 
@@ -11,5 +11,8 @@ router.get('/soldiers', getSoldiersPaginated);
 // Gets soldier by id.
 router.get('/soldiers/:id', getSoldierById);
 
-
+// adds a good deed
 router.post('/deeds', addDeed);
+
+// gets total number of deeds
+router.get('/deeds', getTotalDeeds);
