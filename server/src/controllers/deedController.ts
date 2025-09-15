@@ -19,7 +19,7 @@ export async function addDeed(req:Request, res:Response) {
 
         // if successful and email, send a confirmation email
         if (response && email) {
-            sendConfirmationEmail(email);
+            sendConfirmationEmail(email, deed, soldier_id);
         }
 
         return res.status(200).json({msg: `Deed created! ${response}`})
