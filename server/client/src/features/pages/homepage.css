@@ -1,6 +1,11 @@
 body {
     background-color: #f8f9fc;
 }
+
+input {
+    font-size: 16px;
+}
+
 .mainContainer {
     display: flex;
     flex-direction: column;
@@ -52,6 +57,13 @@ body {
     aspect-ratio: 7 / 1;
     margin: 30px 0px 0px 0px;
     font-size: 16px;
+}
+
+.fetchButtonDiv {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .soldierCarouselCard {
