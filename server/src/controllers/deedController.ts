@@ -1,5 +1,6 @@
 import { addDeedDB } from "../models/deedModels";
 import { Request, Response } from "express";
+import { sendConfirmationEmail } from "../utilities/email";
 
 
 // adds a deed, does basic verification on the request
@@ -15,6 +16,12 @@ export async function addDeed(req:Request, res:Response) {
 
     try {
         const response = await addDeedDB({deed, soldier_id:numId, email});
+
+        // if successful and email, send a confirmation email
+        if (response && email) {
+            sendConfirmationEmail(email);
+        }
+
         return res.status(200).json({msg: `Deed created! ${response}`})
     }
     catch(e) {
