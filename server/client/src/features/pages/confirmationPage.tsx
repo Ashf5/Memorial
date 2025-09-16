@@ -6,7 +6,7 @@ const Confirmation: React.FC = () => {
     const {id} = useParams();
 
     return (
-        <div className='mainContainer smallerContainerItem'>
+        <div className='mainContainer smallerContainerItem' id="confirmationContainer">
             <h1>Thank you for your submission</h1>
             <p>Your good deed has been successfully submitted. We appreciate your contribution to honoring our fallen soldiers.</p>
 
