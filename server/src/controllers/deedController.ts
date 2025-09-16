@@ -1,4 +1,4 @@
-import { addDeedDB } from "../models/deedModels";
+import { addDeedDB, getTotalDeedsDB } from "../models/deedModels";
 import { Request, Response } from "express";
 import { sendConfirmationEmail } from "../utilities/email";
 
@@ -27,5 +27,17 @@ export async function addDeed(req:Request, res:Response) {
     catch(e) {
         console.log(e);
         return res.status(500).json({msg: 'error occured while adding good deed'});
+    }
+}
+
+
+//gets the total good deeds
+export async function getTotalDeeds(req:Request, res:Response) {
+    try {
+        const total = await getTotalDeedsDB();
+        return res.status(200).json({count: total});
+    }
+    catch(e) {
+        return res.status(500).json({msg: 'An error occured while fetching total good deeds'})
     }
 }

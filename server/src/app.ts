@@ -3,7 +3,6 @@ import express, {Application} from 'express';
 import path from 'path';
 import {router} from './routes/userRouter';
 import cors from "cors";
-import './models/deedModels'
 
 const PORT = process.env.PORT || 5000;
 
