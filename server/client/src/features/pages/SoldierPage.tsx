@@ -18,7 +18,8 @@ const SoldierPage = () => {
     if (soldier){
         return (
             
-                <div className="soldierPageContainer">
+                // <div className="soldierPageContainer">
+                <div className='mainContainer'>
                     <SoldierCard soldier={soldier}/>
                     <br />
                     <DeedForm soldier={soldier}/>

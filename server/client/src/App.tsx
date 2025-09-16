@@ -7,14 +7,14 @@ import HomePage from './features/pages/HomePage';
 function App() {
 
   return (
-    <>
+    <div className='rootContainer'>
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/:id' element={<SoldierPage />} />
       </Routes>
       
         
-    </>
+    </div>
   )
 }
 

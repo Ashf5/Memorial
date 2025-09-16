@@ -1,15 +1,4 @@
 
-.soldierPageContainer {
-    width: 100vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-
-}
-
-
 .soldierCard {
     width: 85vw;
     display: flex;
