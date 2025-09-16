@@ -19,7 +19,7 @@ const SoldierPage = () => {
         return (
             
                 // <div className="soldierPageContainer">
-                <div className='mainContainer' id="mainDeedContainer">
+                <div className='mainContainer smallerContainerItem'>
                     <SoldierCard soldier={soldier}/>
                     <br />
                     <DeedForm soldier={soldier}/>
