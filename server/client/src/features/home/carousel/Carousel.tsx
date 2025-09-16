@@ -32,7 +32,7 @@ type CarouselProps = { query: string | undefined }
 function CarouselElement({ query }: CarouselProps) {
 
     const carouselRef = useRef<Carousel | null>(null);
-    const { soldiers, fetchNext, fetchPrevious } = useFetch(query);
+    const { soldiers, loading, fetchNext, fetchPrevious } = useFetch(query);
 
     // create the slides and the previous and next buttons
     let slides: JSX.Element[];
@@ -47,6 +47,10 @@ function CarouselElement({ query }: CarouselProps) {
         slides = [<div><h3>No soldiers found</h3></div>];
     }
 
+    // If loading, add loading sign
+    if (loading) {
+        return <div><h3>Loading.....</h3></div>
+    }
 
 
     return (

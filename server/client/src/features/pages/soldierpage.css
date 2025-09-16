@@ -48,7 +48,7 @@
         max-width: 15%;
     }
 
-    #mainDeedContainer {
+    .smallerContainerItem {
         height: 90vh;
     }
 }
