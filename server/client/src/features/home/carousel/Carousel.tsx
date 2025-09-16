@@ -73,7 +73,7 @@ interface CarouselCardProps {
 function CarouselCard({ soldier }: CarouselCardProps) {
 
     return (
-        <Link to={`/${soldier.id}`}>
+        <Link to={`/${soldier.id}`} >
             <div className="soldierCarouselCard">
                 <img className="soldierCarouselImage" src={soldier.image} alt="Picture of soldier" />
                 <p className="soldierName">{soldier.name}</p>

@@ -70,8 +70,13 @@ input {
 }
 
 .soldierCarouselCard {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
     margin: 8px;
     color: #0d0f1c;
+    height: 95%;
+    padding: 2px;
 }
 
 .soldierCarouselImage {
