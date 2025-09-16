@@ -18,7 +18,7 @@ export const SelectSoldier: React.FC = () => {
     }, [query,])
 
     return (
-        <div className="selectArea">
+        <div className="selectArea" id="selectSoldier">
             <input id="searchBox" type="text" name="search" placeholder="  Search Soldiers" onChange={(e) => setQuery(e.target.value)}/>
             <br />
             <br />
