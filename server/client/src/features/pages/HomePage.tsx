@@ -1,3 +1,4 @@
+import Count from "../home/Count";
 import Info from "../home/Info";
 import { SelectSoldier } from "../home/SelectSoldier";
 import './homepage.css';
@@ -7,6 +8,7 @@ const HomePage = () => {
         <div className="mainContainer">
             <Info />
             <SelectSoldier />
+            <Count />
         </div>
         
     )
