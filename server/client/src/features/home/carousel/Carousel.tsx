@@ -32,16 +32,23 @@ type CarouselProps = { query: string | undefined }
 function CarouselElement({ query }: CarouselProps) {
 
     const carouselRef = useRef<Carousel | null>(null);
-    const { soldiers, loading, fetchNext, fetchPrevious } = useFetch(query);
+    const { soldiers, loading, pageIndex, fetchNext, fetchPrevious } = useFetch(query);
 
     // create the slides and the previous and next buttons
     let slides: JSX.Element[];
     if (soldiers.length > 0) {
-        slides = [
-            <div key='previous-button' className="fetchButtonDiv"><button onClick={fetchPrevious}>Previous</button></div>,
-            ...soldiers.map(soldier => <CarouselCard soldier={soldier} key={soldier.id} />),
-            <div key='next-button' className="fetchButtonDiv"><button onClick={() => { fetchNext(); carouselRef.current?.goToSlide(0, true) }}>Next</button></div>
-        ]
+        if(pageIndex === 0) {
+                slides = [...soldiers.map(soldier => <CarouselCard soldier={soldier} key={soldier.id} />),
+                <div key='next-button' className="fetchButtonDiv"><button onClick={() => { fetchNext(); carouselRef.current?.goToSlide(0, true) }}>Next</button></div>
+            ] 
+        }else {
+            slides = [
+                <div key='previous-button' className="fetchButtonDiv"><button onClick={fetchPrevious}>Previous</button></div>,
+                ...soldiers.map(soldier => <CarouselCard soldier={soldier} key={soldier.id} />),
+                <div key='next-button' className="fetchButtonDiv"><button onClick={() => { fetchNext(); carouselRef.current?.goToSlide(0, true) }}>Next</button></div>
+            ]
+        }
+        
     }
     else {
         slides = [<div><h3>No soldiers found</h3></div>];
