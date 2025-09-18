@@ -25,8 +25,12 @@ export function useFetch(query:string | undefined) {
         // update new pages and pageindex
         fetch(APIURLCOUNT)
             .then(response => response.json())
-            .then(data => {setPages(createShuffledArray(Number(data.count), query ? true : false)); setPageIndex(0)})
-            .then(() => fetch(`${APIURLALL}${pages[pageIndex]}${query ? '&query=' + query : ''}`))
+            .then(data => {
+                const shuffled = createShuffledArray(Number(data.count), query ? true : false);
+                setPages(shuffled); 
+                setPageIndex(0);
+                return shuffled})
+            .then((shuffled) => fetch(`${APIURLALL}${shuffled[0]}${query ? '&query=' + query : ''}`))
             .then(data => data.json())
             .then(data => {setSoldiers(data); setLoading(false)});
     }, [query,]);
@@ -47,7 +51,7 @@ export function useFetch(query:string | undefined) {
         setPageIndex(pages[pageIndex - 1]);
     }
 
-    return {soldiers, loading, fetchNext, fetchPrevious};
+    return {soldiers, loading, pageIndex, fetchNext, fetchPrevious};
 }
 
 const createShuffledArray = (numberSoldiers:number, query:boolean = false) => {
