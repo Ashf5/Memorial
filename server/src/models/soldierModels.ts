@@ -57,3 +57,9 @@ export const getSoldiersSearchDB = async(query:string, pageNumber:number = 1, pe
     }
 
 }
+
+// returns the total count of soldiers in the database
+export const getNumberSoldiersDB = async() => {
+    const number = await db('soldiers').count();
+    return number[0].count;
+}
