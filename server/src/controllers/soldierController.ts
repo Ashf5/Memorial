@@ -1,5 +1,5 @@
 
-import { getSoldierByIdDB, getSoldiersDB, getSoldiersPaginatedDB, getSoldiersSearchDB } from "../models/soldierModels";
+import { getNumberSoldiersDB, getSoldierByIdDB, getSoldiersDB, getSoldiersPaginatedDB, getSoldiersSearchDB } from "../models/soldierModels";
 import { Request, Response } from "express";
 import { Soldier } from "../types/soldierType";
 
@@ -62,4 +62,15 @@ export const getSoldiersSearch = async (req:Request, res:Response) => {
     catch(e) {
         return res.status(500).json({msg: 'An error occured while fetching soldiers'});
     }
+}
+
+export const getNumberSoldiers = async (req: Request, res: Response) => {
+    try {
+        const numSoldiers = await getNumberSoldiersDB();
+        return res.status(200).json({count: numSoldiers});
+    }
+    catch(e) {
+        return res.status(500).json({msg: 'Error fetching number of soldiers'});
+    }
+    
 }
