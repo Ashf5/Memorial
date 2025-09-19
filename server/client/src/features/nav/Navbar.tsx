@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
     return (
         <>
         <div className="navContainer">
-            <div>
+            <div className='logoDiv'>
                 <Link to={'/'} id='navTitle'>In Memory</Link>
                 <Link to={'/'} id='navAbout'>About</Link>
             </div>
