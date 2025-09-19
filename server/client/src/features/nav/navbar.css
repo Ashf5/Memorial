@@ -25,18 +25,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 #navTitle {
-    color: black;
     font-size: larger;
     font-weight: bolder;
     margin-right: 8px;
     margin-left: 3px;
+    color:#607afb;
 }
 
 #navAbout {
-    color: black;
+    color: #607afb;;
     font-size: small;
     font-weight: bold;
     margin-left: auto;
