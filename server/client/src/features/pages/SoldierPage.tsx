@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import type{ Soldier } from "../../../../src/types/soldierType";
 import SoldierCard from "../tribute/SoldierCard";
 import DeedForm from "../tribute/DeedForm";
@@ -20,6 +20,7 @@ const SoldierPage = () => {
             
                 // <div className="soldierPageContainer">
                 <div className='mainContainer smallerContainerItem'>
+                    <Link to="/" id='backArrow'>Back</Link>
                     <SoldierCard soldier={soldier}/>
                     <br />
                     <DeedForm soldier={soldier}/>

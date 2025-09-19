@@ -48,6 +48,8 @@ input {
 
 .selectArea {
     width: 75vw;
+    margin-top: 25px;
+    text-align: center;
 }
 
 
@@ -58,7 +60,7 @@ input {
     border-radius: 5px;
     width: 100%;
     aspect-ratio: 7 / 1;
-    margin: 30px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
     font-size: 16px;
 }
 

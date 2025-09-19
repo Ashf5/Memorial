@@ -16,6 +16,15 @@
     background-color: #607afb;
     color: #f8f9fc;
     font-size: 10px;
+    visibility: hidden;
+    width:0px;
+}
+
+.logoDiv {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #navTitle {
@@ -30,15 +39,26 @@
     color: black;
     font-size: small;
     font-weight: bold;
+    margin-left: auto;
 }
 
 @media(min-width:1024px) {
     #startButton {
         font-size: 15px;
+        visibility: visible;
+        width: auto;
+    }
+
+    .logoDiv {
+        width: auto;
     }
 
     #navTitle {
         margin-right: 5vw;
         margin-left: 10px;
+    }
+
+    #navAbout {
+        margin-left: 0px;
     }
 }

@@ -18,6 +18,12 @@
 
 }
 
+#backArrow {
+    margin-right:auto;
+    margin-left: 5px;
+    color: #607afb;
+}
+
 #buttonContainer {
     text-align: center;
     margin-top: 15px;
