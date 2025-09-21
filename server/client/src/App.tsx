@@ -5,6 +5,7 @@ import SoldierPage from './features/pages/SoldierPage';
 import HomePage from './features/pages/HomePage';
 import Confirmation from './features/pages/confirmationPage';
 import Navbar from './features/nav/Navbar';
+import AboutPage from './features/pages/aboutPage';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/:id' element={<SoldierPage />} />
         <Route path='/confirmation/:id' element={<Confirmation />} />
+        <Route path='/about' element={<AboutPage />} />
       </Routes>
       
         

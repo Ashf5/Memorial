@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
         <div className="navContainer">
             <div className='logoDiv'>
                 <Link to={'/'} id='navTitle'>In Memory</Link>
-                <Link to={'/'} id='navAbout'>About</Link>
+                <Link to={'/about'} id='navAbout'>About</Link>
             </div>
             
             
