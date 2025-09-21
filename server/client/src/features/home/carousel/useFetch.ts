@@ -62,10 +62,9 @@ const createShuffledArray = (numberSoldiers:number, query:boolean = false) => {
         arr.push(i);
     }
     if (query) {
-        console.log('query')
         return arr;
     }
-    console.log('no')
+    
     // shuffle array 
     for (let i = arr.length -1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
