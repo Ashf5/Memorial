@@ -5,7 +5,7 @@ import SoldierPage from './features/pages/SoldierPage';
 import HomePage from './features/pages/HomePage';
 import Confirmation from './features/pages/confirmationPage';
 import Navbar from './features/nav/Navbar';
-import AboutPage from './features/pages/aboutPage';
+import AboutPage from './features/pages/AboutPage';
 
 function App() {
 
